@@ -1,2 +1,2 @@
 # home-page
-A home page with my latest updates 
+[Visit my home page](https://storozhenko98.github.io/home-page/)
