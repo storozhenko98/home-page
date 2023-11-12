@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mykyta Storozhenko</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        #header {
+    background-color: #646e78;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#header span {
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#menu {
+    position: absolute;
+    background-color: #8d98a7;
+    top: 48px; /* Adjust this value based on the actual height of your header */
+    width: 100%;
+    display: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+#menu div {
+    padding: 12px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#menu div:hover {
+    background-color: #c5b6a7;
+}
+
+#main-content {
+    padding-top: 60px; /* Adjust based on header height */
+    margin: 20px;
+}
+
+#bio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+
+}
+
+#image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#experience-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#ai-essay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#ai-tarot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#app-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#python-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#phdSummarizer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#fbt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#embdeddedSys {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#jalapeno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#mos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#education {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#doctoral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#masters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#bachelors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#socials-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#linkedin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 50%;
+}
+
+#github {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 50%;
+}
+
+#appstore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(238, 242, 247);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 50%;
+}
+
+#socIcon {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <span>☰ Mykyta Storozhenko</span>
+        <div id="menu" style="display: none;">
+            <div id="bio" onclick="loadBio()">Bio</div>
+            <div id="experience" onclick="loadExperience()">Experience</div>
+            <div id="socials" onclick="loadSocials()">Socials</div>
+        </div>
+    </div>
+    <div id="main-content">
+        <!-- Content will be loaded here based on clicks -->
+    </div>
+
+    <script>
+        document.getElementById('header').addEventListener('click', function() {
+            document.getElementById('menu').style.display = 
+                document.getElementById('menu').style.display === 'none' ? 'block' : 'none';
+        });
+
+        function loadBio() {
+            document.getElementById('main-content').innerHTML = `
+            <div id="bio-container">
+                <img id="image" src="https://media.licdn.com/dms/image/D5603AQEaM7zR7rQJPw/profile-displayphoto-shrink_800_800/0/1683127213047?e=2147483647&v=beta&t=jqSocidD8ycx6a19sj9Mtx8OtydUjRVshihSVqDPLbc" alt="Mykyta Storozhenko">
+                <h1>Mykyta Storozhenko</h1>
+                <h2> Software Engineer | AI Enthusiast | Philosopher </h2>
+                <p> I'm Mykyta Storozhenko, a Boca Raton-based software engineer specializing in full-stack development, mobile apps, and embedded systems. My expertise includes JavaScript (React, React Native, Node, Express, Expo), Python (Django, Flask, data analytics frameworks, MicroPython), and C. I've launched two iOS apps with sophisticated LLM-based backends on the Apple App Store. Academically, I hold a Master's in Philosophy from Kent State and a Bachelor's from Florida Atlantic University, focusing on logic, computation, and analytical philosophy. My experience extends to three years of AI research at the University of Kentucky. </p>
+            </div>
+            `;
+        }
+
+        function loadExperience() {
+            document.getElementById('main-content').innerHTML = `
+            <div id="experience-container">
+                <h1>Experience</h1>
+                <h2>Published Apple App Store Apps</h2>
+                <div id="app-container">
+                    <div id="ai-essay">
+                        <img id="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/87/e8/fa/87e8faae-e2a4-cb65-f443-872d54c5264d/AppIcon-1x_U007epad-85-220.png/460x0w.webp" alt="AI-Essay">
+                        <h3>AI-Essay</h3>
+                        <p>AI-Essay is an iOS application written in React Native that uses a back-end server and an LLM to generate an essay based on a user's input. Unique to this application is recursive self-prompting that I developed to generate a more coherent and longer form essay. Competitors offer essays up to 1000 words long, while I offer essays up to 3000 words long. The back-end is a node server using Express to handle traffick and make API calls. Currently the app generates $20 a month, launched in early November, 2023</p>
+                        <a href="https://apps.apple.com/us/app/ai-essay/id6470136380">App Store Link</a>
+                    </div>
+                    <div id="ai-tarot">
+                        <img id="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/ba/19/e4/ba19e441-967b-e6f1-4bf1-8c044bae34d7/AppIcon-1x_U007emarketing-0-7-0-85-220.png/460x0w.webp" alt="AI-Tarot">
+                        <h3>AI-Tarot</h3>
+                        <p>AI-Tarot is an iOS application also written in React Native that uses a back-end server, atmospheric noise, and an LLM to generate tarot card readings. Hashmaps are crucial to card generation, and the back-end keeps usage statistics for later analytics. The backend is a node server using Express to handle traffick and make API calls. Currently the app generates $50 a month, launched in June, 2023</p>
+                        <a href="https://apps.apple.com/us/app/ai-tarot/id6449005723">App Store Link</a>
+                    </div>
+                </div>
+                <h2>Python Projects</h2>
+                <div id="python-projects">
+                    <div id="phdSummarizer">
+                        <h3>PhD Summarizer</h3>
+                        <p>PhD Summarizer is a Python application that uses sequential chain of reasoning prompting and article chunking to use GPT4 with an 8k context to summarize articles far longer than 8k tokens.</p>
+                        <a href="https://github.com/storozhenko98/phdGPT>">Github Link</a>
+                    </div>
+                    <div id="fbt">
+                        <h3>A Simulation of Donald Hoffman's Fitness-Beats-Truth</h3>
+                        <p>A Simulation of Donald Hoffman's Fitness-Beats-Truth is a Python application that uses a genetic algorithm to simulate the evolution of a population of agents that have a fitness function that is not correlated with truth. This is a simulation of Donald Hoffman's Fitness-Beats-Truth theory.</p>
+                        <a href="https://github.com/storozhenko98/hoffman-fbt-hypothesis">Github Link</a>
+                    </div>
+                </div>
+                <h2>Embedded Systems</h2>
+                <div id="embdeddedSys">
+                    <div id="jalapeno">
+                        <h3>Jalapeno OS</h3>
+                        <p>Jalapeno OS is a micropython implementation of a web-view OS for an esp32 microcontroller. It is the continuation of the mOS project that includes more tools and a more sophisticated UI. Additionally, it includes an essay completion app powered by an LLM. As mOS, this project mixes micropython and web-server capacities to create a kind of embedded OS.</p>
+                        <a href="https://github.com/storozhenko98/project-jalapeno">Github Link</a>
+                    </div>
+                    <div id="mos">
+                        <h3>mOS</h3>
+                        <p>mOS is a micropython implementation of a web-view OS for an esp32 microcontroller. It is a proof of concept that includes a basic UI and a few tools. Tools include REPL, a HyperCard 2.0 with LLM integration, and an AI coder tool. The idea is to allow for a microcontroller to act as both a home server and a genuine computer with a kind of micro operating system.</p>
+                        <a href="https://github.com/storozhenko98/esp32-mos">Github Link</a>
+                    </div>
+                </div>
+                <h2>Education</h2>
+                <div id="education">
+                    <div id="doctoral">
+                        <h3>Doctoral Studies in Philosophy</h3>
+                        <p>I studied philosophy of artificial intelligence at the University of Kentucky. My main focus was on attempting to find uses for LLMs, learning the fundamental of machine learning, and exploring questions pertaining to model design and fundamentals of computation. </p>
+                    </div>
+                    <div id="masters">
+                        <h3>Masters in Philosophy</h3>
+                        <p>I received a Masters in Philosophy at Kent State University. My thesis focused on rigorous logical analysis of various ontological framworks. I honed logic and computation at this program as well. I designed logical frameworks utilizing Von Neumann and Turing architectures.</p>
+                    </div>
+                    <div id="bachelors">
+                        <h3>Bachelors in Philosophy</h3>
+                        <p>I received a Bachelors in Philosophy at Florida Atlantic University. I studied logic and analytical philosophy here, and studied computation as an extension of logic. My main focus was on systematic analysis and conceptual framework design.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            `;
+        }
+
+        function loadSocials() {
+            document.getElementById('main-content').innerHTML = `
+            <div id="socials-container">
+                <h1>Socials</h1>
+                <div id="linkedin">
+                    <a href="https://www.linkedin.com/in/mykyta-storozhenko-2b1b3a1a0/">Check me out on LinkedIn</a>
+                    <img id="socIcon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </div>
+                <div id="github">
+                    <a href="https://github.com/storozhenko98">Check out my GitHub</a>
+                    <img id="socIcon"  src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png" alt="Github">
+                </div>
+                <div id="appstore">
+                    <a href="https://apps.apple.com/us/developer/mykyta-storozhenko/id1539738980">See my apps on the App Store!</a>
+                    <img id="socIcon"  src="https://cdn-icons-png.flaticon.com/512/5977/5977575.png" alt="App Store">
+                </div>
+            </div>
+            `;
+        }
+        loadBio();
+    </script>
+</body>
+</html>
